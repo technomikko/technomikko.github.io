@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <form name="form">
+      <textarea
+        name="demo"
+        id="demo"
+        rows="10"
+        cols="60"
+        oninput="myFunction(this.value)"
+      ></textarea>
+    </form>
+    <script>
+      function myFunction(val) {
+        document.getElementById("demo").innerHTML = val;
+      }
+    </script>
   </body>
 </html>
