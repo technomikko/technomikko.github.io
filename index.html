@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head> </head>
-  <body>
+  <body onload="startTime()">
     <h1>technomikko's site</h1>
     <p>Type into the text area element and see what happens.</p>
     <textarea oninput="inputFn(this.value)" rows="8" cols="50"> </textarea>
 
     <p><span id="outputCipher"></span></p>
+
+    <h2>JavaScript Clock</h2>
+
+    <div id="txt"></div>
+
+    <script>
+      function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+      }
+
+      function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i;
+        } // add zero in front of numbers < 10
+        return i;
+      }
+    </script>
 
     <script>
       function inputFn(valStr) {
