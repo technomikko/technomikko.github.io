@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <head> </head>
   <body>
-    <form name="form">
-      <textarea
-        name="demo"
-        id="demo"
-        rows="10"
-        cols="60"
-        oninput="myFunction(this.value)"
-      ></textarea>
-    </form>
+    <textarea oninput="inputFn(this.value)" rows="8" cols="50"> </textarea>
+
+    <p><span id="outputCipher"></span></p>
+
     <script>
-      function myFunction(val) {
-        document.getElementById("demo").innerHTML = val;
+      function inputFn(valStr) {
+        document.getElementById("outputCipher").innerHTML = valStr;
       }
     </script>
   </body>
