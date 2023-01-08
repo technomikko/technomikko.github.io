@@ -4,7 +4,16 @@
   <body onload="startTime()">
     <h1>technomikko's site</h1>
     <p>Type into the text area element and see what happens.</p>
-    <textarea oninput="inputFn(this.value)" rows="8" cols="50"> </textarea>
+    <textarea
+      onkeydown="return myf(event)"
+      oninput="inputFn(this.value)"
+      rows="8"
+      cols="50"
+    ></textarea>
+
+    <span id="error" style="color: red; display: none"
+      >Plese Enter Only Alphabets...</span
+    >
 
     <p><span id="outputCipher"></span></p>
 
@@ -35,6 +44,23 @@
     <script>
       function inputFn(valStr) {
         document.getElementById("outputCipher").innerHTML = valStr;
+      }
+    </script>
+    <script>
+      function myf(e) {
+        var c =
+          (e.which >= 65 && e.which < 91) ||
+          e.which == 8 ||
+          e.which == 46 ||
+          (e.which >= 37 && e.which <= 40) ||
+          (e.which >= 16 && e.which <= 18) ||
+          (e.which >= 48 && e.which <= 57);
+        {
+          document.getElementById("error").style.display = c
+            ? "none"
+            : "inline";
+        }
+        return c;
       }
     </script>
   </body>
