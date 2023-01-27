@@ -11,57 +11,11 @@
       cols="50"
     ></textarea>
 
-    <span id="error" style="color: red; display: none"
-      >Please, enter only alphabets, numbers</span
-    >
-
     <p><span id="outputCipher"></span></p>
-
-    <h2>JavaScript Clock</h2>
-
-    <div id="txt"></div>
-
-    <script>
-      function startTime() {
-        const today = new Date();
-        let h = today.getHours();
-        let m = today.getMinutes();
-        let s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
-        setTimeout(startTime, 1000);
-      }
-
-      function checkTime(i) {
-        if (i < 10) {
-          i = "0" + i;
-        } // add zero in front of numbers < 10
-        return i;
-      }
-    </script>
 
     <script>
       function inputFn(valStr) {
         document.getElementById("outputCipher").innerHTML = valStr;
-      }
-    </script>
-
-    <script>
-      function myf(e) {
-        var c =
-          (e.which >= 65 && e.which < 91) ||
-          e.which == 8 ||
-          e.which == 46 ||
-          (e.which >= 37 && e.which <= 40) ||
-          (e.which >= 16 && e.which <= 18) ||
-          (e.which >= 48 && e.which <= 57);
-        {
-          document.getElementById("error").style.display = c
-            ? "none"
-            : "inline";
-        }
-        return c;
       }
     </script>
   </body>
